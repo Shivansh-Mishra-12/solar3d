@@ -77,7 +77,7 @@ const Planets = ({ target }) => {
     // Saturn gets extra room for its rings
     // Tighter distance: 2× radius + small padding, rings get a bit extra
 const ringExtra    = planetData.rings ? 6 : 0
-const safeDistance = planetData.radius * 2.5 + 4 + ringExtra
+const safeDistance = planetData.radius *2.5+4 + ringExtra
 
 const desiredPos = planetPos.clone()
   .add(toPlanet.multiplyScalar(safeDistance))

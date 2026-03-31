@@ -111,6 +111,10 @@ function App() {
 
       </div>
 
+      <div className='absolute border-2 h-full w-1/2 right-0'>
+
+      </div>
+
     </div>
   )
 }

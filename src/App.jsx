@@ -54,7 +54,7 @@ function App() {
       {/* 🔷 Sliding Tech Panel Wrapper */}
       <div
         className={`absolute top-4 left-4 sm:top-6 sm:left-6 
-        transition-all duration-500 ease-in-out
+        transition-all duration-500 ease-in-out z-10
         ${isOpen ? "translate-x-0 opacity-100" : "-translate-x-[110%] opacity-70 scale-95"}`}
       >
 
@@ -142,7 +142,7 @@ function App() {
         </div>
       </div>
 
-      <div className='w-full h-full md:w-1/2  absolute top-0 right-0  pointer-events-none '>
+      <div className='w-full h-full md:w-1/2  absolute top-0 right-0  pointer-events-none z-0'>
         <Info target={target} showInfo={showInfo} />
       </div>
 

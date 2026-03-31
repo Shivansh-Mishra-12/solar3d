@@ -1,77 +1,12 @@
-html,body{
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-  box-sizing: border-box;
-  background: #000;
-  color: white;
-}
+@import "tailwindcss";
 
-/* 🌀 Slow spin */
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@font-face {
+  font-family: 'Pixelated';
+  src: url('../fonts/Pixelated.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+  font-style: normal;
 }
-
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
-}
-
-/* 🔄 Reverse spin */
-@keyframes spin-reverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 6s linear infinite;
-}
-
-/* 🔍 Scan line */
-.scan-line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #00eaff;
-  opacity: 0.4;
-  animation: scan 4s linear infinite;
-}
-
-@keyframes scan {
-  0% { top: 0%; }
-  100% { top: 100%; }
-}
-
-/* 🎯 Target animation */
-.target-text {
-  animation: targetPop 0.4s ease, flicker 0.3s;
-}
-
-/* Pop + glow */
-@keyframes targetPop {
-  0% {
-    opacity: 0;
-    transform: scale(0.6);
-    text-shadow: 0 0 0px #00eaff;
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.2);
-    text-shadow: 0 0 10px #00eaff, 0 0 20px #00eaff;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 0 0 5px #00eaff;
-  }
-}
-
-/* Flicker effect */
-@keyframes flicker {
-  0% { opacity: 0.2; }
-  20% { opacity: 1; }
-  40% { opacity: 0.3; }
-  60% { opacity: 1; }
-  100% { opacity: 1; }
+@theme {
+  --font-pixelated: "Pixelated", sans-serif;
 }

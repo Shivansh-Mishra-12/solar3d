@@ -2,7 +2,6 @@ import { useFrame } from '@react-three/fiber';
 import React, { useEffect } from 'react'
 
 const Info = ({target,showInfo}) => {
-    console.log(target,showInfo)
     const planetInfo = [
         {
             name: "Mercury",

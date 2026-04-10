@@ -4,17 +4,20 @@ import { OrbitControls, Text3D, Center } from '@react-three/drei'
 import Sun from './components/Sun'
 import Planets from './components/Planets'
 import CosmicBubble from './components/CosmicBubble'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import Info from './components/Info'
+import Loader from './components/Loader'
 
 function App() {
 
   const [camPos, setCamPos] = useState([0, 4, 25])
   const [target, setTarget] = useState("TARGET")
+  const [loaded, setLoaded] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
   const [showInfo, setshowInfo] = useState(false)
   const isPlanetSelected = target !== "TARGET"
+
 
   // ✅ UPDATED: handler with screen width condition
   const handleSelectPlanet = (planet) => {
@@ -32,6 +35,12 @@ function App() {
   return (
     <div className='h-screen w-screen relative overflow-hidden'>
 
+      {/* {!loaded && <Loader onComplete={() => setLoaded(true)} />}   */}
+      if(!loaded){
+
+          <Loader onComplete={()=>setLoaded(true)} />
+      }
+        
       {/* 🌌 3D Canvas */}
       <Canvas
         style={{ position: "absolute", top: 0, left: 0 }}
